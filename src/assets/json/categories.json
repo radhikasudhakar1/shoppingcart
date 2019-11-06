@@ -1,0 +1,10 @@
+{
+    "category" :
+    [
+        {"categoryid":1, "categoryname":"electronics", "categorydescription":"electronics items"},
+        {"categoryid":2, "categoryname":"mobile", "categorydescription":"mobiles"},
+        {"categoryid":3, "categoryname":"cover", "categorydescription":"mobile cover"},
+        {"categoryid":4, "categoryname":"case", "categorydescription":"mobile cases"},
+        {"categoryid":5, "categoryname":"accessories", "categorydescription":"accessories"}
+    ]
+}
