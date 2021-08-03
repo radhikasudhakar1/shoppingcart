@@ -1,0 +1,102 @@
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px">
+                            <a routerLink="/createaccount" id="Create Account"> Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <div style="padding-top:30px" class="panel-body">
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form method="post" [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="loginform"
+                            class="form-horizontal" role="form">
+
+                            <input type="hidden" id="id" name="login" placeholder="id" formControlName="id" value="0" />
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-user"></i></span>
+
+                                <input type="text" id="username" name="login" placeholder="username"
+                                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                                    formControlName="username" placeholder="username or email" required />
+
+                                <div *ngIf="submitted && f.username.errors" class="alert alert-danger">
+                                    <div *ngIf="f.username.errors.required">Username is required</div>
+                                    <div *ngIf="f.username.errors.minlength">
+                                        Username must be at least 4 characters long
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 25px" class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-lock"></i></span>
+
+                                <input type="text" class="form-control" id="password" name="login"
+                                    placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                    formControlName="password" required />
+
+                                <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password must be at least 4 characters long
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="input-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember
+                                        me
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+                                <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg}}</div>
+
+                                <div class="col-sm-12 controls">
+                                    <button class="btn btn-success" name="submit">Login</button>
+                                    <button name="cancel" class="btn btn-primary" type="reset"
+                                        (click)="onReset()">Cancel</button>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-12 control">
+                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                        Don't have an account!
+                                        <a routerLink="/createaccount"
+                                            onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Sign Up Here
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

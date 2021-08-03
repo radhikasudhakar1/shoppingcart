@@ -1,0 +1,26 @@
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12">
+
+                <h1> My Orders</h1>
+                <h5> (Click Order ID link to see the Order details)</h5>
+
+            <div *ngIf="isError">{{ this.errorMsg }}</div>
+
+            <div *ngIf="!isError">
+                <ag-grid-angular *ngIf="enableOrderHistoryGrid === true" style="width: 100%; height: 450px;" class="ag-theme-balham" [enableFilter]="true"
+                    [rowData]="rowOrderHistoryData" [columnDefs]="columnOrderHistoryDefs">
+                </ag-grid-angular>
+                <ag-grid-angular *ngIf="enableOrderGrid === true" style="width: 80%; height: 150px;" class="ag-theme-balham" [enableFilter]="true"
+                    [rowData]="rowOrderData" [columnDefs]="columnOrderDefs">
+                </ag-grid-angular>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>

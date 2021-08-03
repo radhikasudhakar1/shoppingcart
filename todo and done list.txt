@@ -1,0 +1,10 @@
+12/11/19
+--> copied template and put in new angular project ecommerce
+--> put index.html code in app-component.html
+--> copied images and css folders in /assets
+--> copied fonts and js folders outside /src
+
+13/11/19
+--> removed "deal of the day" from homepage becos not align properly
+--> separate header and footer and homepage component
+-->

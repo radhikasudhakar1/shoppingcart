@@ -1,0 +1,88 @@
+console.log("cart length:" + this.cart.length);
+    for (let singlecart of this.cart) {
+
+      if (this.loginid === singlecart.loginid) {
+        this.products = singlecart.details;
+
+        for (let product of this.products.entries()) {
+          let productid = product[0];
+          let count = product[1];
+
+          this._productService.getProductsDetailsByProductId(productid).subscribe
+            (response => {
+              let oneProduct = response.map(item => {
+                return new Product(
+                  item.productid,
+                  item.categoryid,
+                  item.name,
+                  item.description,
+                  item.price,
+                  item.isstockavailable,
+                  item.totalno,
+                  item.isofferavailable,
+                  item.offerprice,
+                  item.reviewid,
+                  item.imagepath
+                );
+              });
+
+              this.productsDetails.push(...oneProduct);
+            });
+        }
+      }
+    }
+
+************************************************************************
+
+
+  addCartDetails(dbcart: Dbcart[]) {
+    let cartProductsMap = new Map();
+
+    for (var products of this.dbcart) {
+      console.log("prodid:" + products.productid + " loginid:" + products.loginid);
+
+      //add the product into the map
+      cartProductsMap.set(products.productid, products.noofproducts);
+    }
+
+    //create a cart session which hold login id and product ids map
+    //create a cart for the login
+    this.cart.push(new Cart(this.loginid, cartProductsMap));
+  }
+
+****************************************************************************
+        //get product details if login id already exists
+        if(this.cart.length === 0)
+        {
+            //add the product into the map
+            this.cartProductsMap.set(productid, 1);
+
+            //create a cart session which hold login id and product ids map
+            //create a cart for the login
+            this.cart.push(new Cart(loginid, this.cartProductsMap));
+        }else{
+            console.log("inside else of login id condition");
+            for(var singlecart of this.cart){
+                console.log("loginid:"+singlecart.loginid);
+                if(singlecart.loginid === loginid) {
+                    //need to check the product id already in the cart
+
+                    singlecart.details.set(productid,1);
+                    break;
+                }
+            }
+            console.log("after setting values");
+        }
+
+*************************************************************************
+
+
+
+   /* this.route.queryParams.subscribe(params => {
+      console.log("params:"+params[0]);
+      this.dbcart = params["dbcart"];
+    });*/
+
+*************************************************************************
+
+

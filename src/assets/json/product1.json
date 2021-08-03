@@ -1,0 +1,11 @@
+{
+    "product1" :
+   [
+
+	{"productid":1, "categoryid":1, "productname":"LED TV", "description":"led television", "productprice":20000.0, "image":"1"},
+ 	{"productid":2, "categoryid":1, "productname":"RADIO", "description":"FM radio", "productprice":10000.0, "image":"2"},
+	{"productid":3, "categoryid":1, "productname":"LAPTOP", "description":"laptop", "productprice":50000.0, "image":"3"}
+ 
+	
+   ]
+}

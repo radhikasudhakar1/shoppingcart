@@ -1,0 +1,12 @@
+{
+    "product2" :
+   [
+
+	{"productid":4, "categoryid":2, "productname":"iPhone X Max", "description":"iphone latest model", "productprice":100000.0, "image":"4"},
+	{"productid":5, "categoryid":2, "productname":"Samsung Galaxy", "description":"samsung model", "productprice":50000.0, "image":"5"},
+	{"productid":6, "categoryid":2, "productname":"RedMi 6 Pro", "description":"redmi latest phone", "productprice":25000.0, "image":"6"},
+	{"productid":7, "categoryid":2, "productname":"Vivo 8", "description":"Vivo latest prop", "productprice":35000.0, "image":"7"}
+  
+	
+   ]
+}

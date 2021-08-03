@@ -1,0 +1,36 @@
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12">
+                <div *ngIf="isError">{{ this.errorMsg }}</div>
+
+                <div *ngIf="!isError">
+
+                    Please select the Payment Type:
+                    <form method="post" [formGroup]="payment" (ngSubmit)="onSubmit()">
+                        <div>
+                            <select id="paymenttype" formControlName="paymenttype" (change)="paymentSelect()">
+                                <option *ngFor="let type of this.paymentTypes" value={{type}}>
+                                    {{type}}
+                                </option>
+                            </select>
+                        </div>
+                        <div *ngIf="this.isDetails">
+                            Card Details:<input type="text" id="card" placeholder="Card Details"
+                                formControlName="carddetails">
+                            <br>
+                            Card Holder Name:<input type="text" id="cardname" placeholder="Card Holder Name"
+                                formControlName="cardname">
+                            <br>
+                        </div>
+                        <button name="submit">Proceed</button>
+                        <button name="cancel">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

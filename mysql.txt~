@@ -1,0 +1,28 @@
+INSERT INTO `angular`.`product`
+(`productid`,
+`categoryid`,
+`name`,
+`description`,
+`price`,
+`isstockavailable`,
+`totalno`,
+`isofferavailable`,
+`offerprice`,
+`reviewid`,
+`imagepath`)
+VALUES
+(503,
+1,
+"Samsung Galaxy S10 Lite (Prism White, 512 GB, 8 GB RAM)",
+"17.01 cm (6.7 Inch) FHD Plus Super AMOLED Plus Display || Octa-Core Qualcomm Snapdragon 855 - Android 10 || Cameras - Rear: (48+12+5) MP | Front: 32 MP || Infinity-O Display - See Beyond Limits || Triple Camera - Optimizes your Photos",
+46999.00,
+1,
+110,
+1,
+44999,
+1502,
+"samsunggalaxy.jpg");
+
+
+select * from product;
+

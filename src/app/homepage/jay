@@ -1,0 +1,7 @@
+<app-root>
+<app-top-bar>
+<app-product-list>
+<app-product-alert>
+<h2>product-list>
+
+<div= ngfor="let product of product">

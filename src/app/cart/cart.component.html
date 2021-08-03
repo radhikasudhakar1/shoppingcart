@@ -1,0 +1,36 @@
+<!--<li *ngFor="let singlecart of cart">
+    {{ singlecart.loginid }}
+    <br>
+    <ul *ngFor="let entry of singlecart.details.entries()">
+        {{ entry[0] }} , {{ entry[1]}}
+    </ul>
+
+</li>
+-->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section title -->
+            <div class="col-md-12">
+                <div *ngIf="isError">{{ this.errorMsg }}</div>
+
+                <div *ngIf="!isError">
+                    Products list in the Cart:
+
+                    <li *ngFor="let productlist of this.dbcart">
+                        {{ productlist.productid }} , {{ productlist.noofproducts}} , {{ productlist.datetime}}<br>
+                    </li>
+                    <br>
+                    Products Details of the cart:
+                    <li *ngFor="let product of this.productsDetails">
+                        {{ product.productid }} , {{ product.description}} , {{ product.price }}<br>
+                    </li>
+
+                    <button (click)=directToPayment()>Proceed to Check Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

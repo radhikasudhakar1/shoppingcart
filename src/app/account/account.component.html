@@ -1,0 +1,243 @@
+<div class="section">
+    <!-- container -->
+    <div class="container">
+
+        <form method="post" [formGroup]="createaccount" (ngSubmit)="onSubmit()" id="signupform" class="form-horizontal"
+            role="form">
+
+             <div id="signupbox" style="margin-top:50px"
+                class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading" style="background-color: #30323A;">
+                        <div class="panel-title" style="color: #FFF">Sign Up</div>
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                            <a id="signinlink" routerLink="/login"
+                                onclick="$('#signupbox').hide(); $('#loginbox').show()">
+                                Sign In</a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="col-md-3 control-label">Username</label>
+                            <div class="col-md-9">
+                                <input type="text" id="username" placeholder="username" formControlName="username"
+                                    class="form-control" />
+                                <div *ngIf="submitted && f.username.errors" class="alert alert-danger">
+                                    <div *ngIf="f.username.errors.required">User Name is required</div>
+                                    <div *ngIf="f.username.errors.minlength">User Name should have minimum of 3
+                                        letters</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9">
+                                <input type="text" id="password" placeholder="password" formControlName="password"
+                                    class="form-control" />
+                                <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password should have minimum of 5
+                                        letters</div>
+                                    <div *ngIf="f.password.errors.maxlength">Password should have maximum of 6
+                                        letters</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="confirmpassword" class="col-md-3 control-label">Confirm Password</label>
+                            <div class="col-md-9">
+
+                                <input type="text" id="conpassword" placeholder="conpassword"
+                                    formControlName="conpassword" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                            <div class="form-group">
+                                <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="firstname" class="form-control" placeholder="firstname"
+                                        formControlName="firstname" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="lastname" class="form-control" placeholder="lastname"
+                                        formControlName="lastname" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailid" class="col-md-3 control-label">Email Id</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="emailid" class="form-control" placeholder="emailid"
+                                        formControlName="emailid" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phoneno" class="col-md-3 control-label">Phone Number</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="phone" class="form-control" placeholder="phone"
+                                        formControlName="phone" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                            <div class="form-group">
+                                <label for="address" class="col-md-3 control-label">Address</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="address" class="form-control" placeholder="address"
+                                        formControlName="address" />
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city" class="col-md-3 control-label">City</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="city" class="form-control" placeholder="city"
+                                        formControlName="city" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state" class="col-md-3 control-label">State</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="state" class="form-control" placeholder="state"
+                                        formControlName="state" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postal" class="col-md-3 control-label">Postal</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="postal" class="form-control" placeholder="postal"
+                                        formControlName="postal" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country" class="col-md-3 control-label">Country</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="country" class="form-control" placeholder="country"
+                                        formControlName="country" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="language" class="col-md-3 control-label">Language</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="language" class="form-control" placeholder="language"
+                                        formControlName="language" />
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button id="btn-signup" name="submit" class="btn btn-info"
+                                    style="background-color: #30323A;">
+                                    <i class="icon-hand-right"></i> Sign Up</button>
+
+                                <button id="btn-signup" name="cancel" class="btn btn-info"
+                                    style="background-color: #30323A;">
+                                    <i class="icon-hand-right"></i> Cancel</button>
+
+                            </div>
+                        </div>
+
+                        <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+                            <div class="col-md-offset-3 col-md-9">
+                                <button id="btn-fbsignup" type="button" class="btn btn-primary"
+                                    style="background-color: #30323A;">
+                                    <i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+ 
+ <!--         <fieldset>
+                <legend>Login Information</legend>
+                <label for="username">Username:<span class="lblError">*</span></label>
+                <input type="text" id="username" placeholder="username" formControlName="username" />
+                <div *ngIf="submitted && f.username.errors" class="alert alert-danger">
+                    <div *ngIf="f.username.errors.required">User Name is required</div>
+                    <div *ngIf="f.username.errors.minlength">User Name should have minimum of 3 letters</div>
+                </div>
+
+                <label for="password">Password:<span class="lblError">*</span></label>
+                <input type="text" id="password" placeholder="password" formControlName="password" />
+                <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password should have minimum of 5 letters</div>
+                    <div *ngIf="f.password.errors.maxlength">Password should have maximum of 6 letters</div>
+                </div>
+
+                <label for="confirmpassword">Confirm Password:<span class="lblError">*</span> </label>
+                <input type="text" id="conpassword" placeholder="conpassword" formControlName="conpassword" />
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>User Information</legend>
+                <label for="firstname">First Name: <span class="lblError">*</span></label>
+                <input type="text" id="firstname" placeholder="firstname" formControlName="firstname" />
+                <label for="lastname">Last Name: </label>
+                <input type="text" id="lastname" placeholder="lastname" formControlName="lastname" />
+                <label for="emailid">Email Id: <span class="lblError">*</span></label>
+                <input type="text" id="emailid" placeholder="emailid" formControlName="emailid" />
+                <label for="phoneno">Phone No.:<span class="lblError">*</span></label>
+                <input type="text" id="phone" placeholder="phone" formControlName="phone" />
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="address">Address:<span class="lblError">*</span></label>
+                <input type="text" id="address" placeholder="address" formControlName="address" />
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="city" formControlName="city" />
+                <label for="state"> State: </label>
+                <input type="text" id="state" placeholder="state" formControlName="state" />
+                <label for="postalcode">Postal Code:</label>
+                <input type="text" id="postal" placeholder="postal" formControlName="postal" />
+                <label for="country"> Country:</label>
+                <input type="text" id="country" placeholder="country" formControlName="country" />
+            </fieldset>
+            <br><br>
+            <fieldset>
+                <legend>Other Information</legend>
+                <label for="language">Language:</label>
+              <input type="text" id="language" placeholder="language" formControlName="language" />
+            </fieldset>
+            <br><br>
+            <div>
+                <button name="submit">Create new user</button>
+                <button name="cancel">Cancel</button>
+            </div>
+        -->
+            {{errorMsg}}
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+    "category" :
+   [
+	{"categoryid":1, "categoryname":"Electronics", "categorydescription":"electronics items", "categoryimagename":"electronics.jpg", "categoryimagepath":"/assets/images/electronics.jpg"},
+	{"categoryid":2, "categoryname":"Mobile", "categorydescription":"mobiles", "categoryimagename":"mobile.jpg", "categoryimagepath":"/assets/images/mobile.jpg"},
+	{"categoryid":3, "categoryname":"Cover", "categorydescription":"mobile cover", "categoryimagename":"cover.jpg", "categoryimagepath":"/assets/images/cover.jpg"},
+	{"categoryid":4, "categoryname":"Case", "categorydescription":"mobile cases", "categoryimagename":"case.jpg", "categoryimagepath":"/assets/images/case.jpg"},
+	{"categoryid":5, "categoryname":"Accessories", "categorydescription":"accessories", "categoryimagename":"accessories.jpg", "categoryimagepath":"/assets/images/accessories.jpg"}
+    ]
+}
